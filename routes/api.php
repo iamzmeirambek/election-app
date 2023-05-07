@@ -20,5 +20,6 @@ Route::prefix('v1')->group(function () {
         Route::get('/index', 'index');
         Route::post('/email', 'checkEmail');
         Route::get('/confirm', 'confirmAccount');
+        Route::get('/getaccount', 'getAccount');
     });
 });
