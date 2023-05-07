@@ -29,7 +29,8 @@ class CheckEmailRequest extends FormRequest
             ],
             'account' => [
                 'required',
-                'string'
+                'string',
+                'unique:elections,account'
             ],
         ];
     }
