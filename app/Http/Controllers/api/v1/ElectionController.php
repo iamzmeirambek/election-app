@@ -57,4 +57,24 @@ class ElectionController extends Controller
             'message' => 'Your account activated!'
         ]);
     }
+    
+    public function getAccount(Request $request)
+    {
+        $election = Election::query()->where('account','=', $request->account)
+                        ->where('approved','=', 1)
+                        ->first();
+
+        if(!$election){
+            return response()->json([
+                'message' => 'account do not exists'
+            ]);;
+        }
+        else {
+            return response()->json([
+                'message' => 'account exists'
+                ]);
+
+        }
+
+    }
 }
